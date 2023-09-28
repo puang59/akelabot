@@ -47,10 +47,7 @@ async def cleanup(ctx, amount: int):
         await ctx.send("Please provide a valid positive number of messages to delete.")
         return
 
-    # Delete the command message
     await ctx.message.delete()
-
-    # Use `purge` to delete messages
     with contextlib.suppress(discord.HTTPException):
         deleted_messages = await ctx.channel.purge(limit=amount)
 
