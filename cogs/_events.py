@@ -10,10 +10,11 @@ class _events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, msg):  
-            # if not msg.author.id == 657064257552384044: # If author is not puang
+        if not msg.author.id == 657064257552384044: # If author is not puang
             if msg.channel.id == 1156593944663183452: # if channel is not general
                 if not isinstance(msg.channel, discord.channel.DMChannel): # if the channel is not Dm channel
-                    if not msg.content.startswith(self.bot.command_prefix): #checking if msg is a commands 
+                    # if not msg.content.startswith(self.bot.command_prefix): #checking if msg is a commands 
+                    if not msg.content in ['hawt', 'hawtt']:
                         if not msg.attachments:
                             await msg.delete() 
 
